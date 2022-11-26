@@ -27,7 +27,7 @@
                                 <p class="card-text text-muted h6">{{ post.created_on}} <i
                                     class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                                 <p class="card-text text-muted h6">Author: {{ post.author }} 
-                                    | <a href="{% url 'category' post.category %}">{{ post.category }}</a>
+                                    | <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
                                 </p>
                             </div>
                         </div>

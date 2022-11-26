@@ -42,10 +42,10 @@ def CreatePost(request):
     return render(request, "create_post.html", context)
 
 
-# View for individual category page
+# View for individual category pages
 def Category(request, categories):
-    category = Post.objects.filter(category=categories)
-    return render(request, 'categories.html', {'categories': categories.title(), 'category': category})
+    category = Post.objects.filter(category=categories.replace('-', ' '))
+    return render(request, 'categories.html', {'categories': categories.title().replace('-', ' '), 'category': category})
 
 
 class UpdatePost(generic.UpdateView):
