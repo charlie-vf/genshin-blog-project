@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Category
 from .forms import CommentForm, CreateForm
 from django.urls import reverse_lazy
 
@@ -11,6 +11,13 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
+    # for category dropdown list
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(PostList, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
 
 
 # class AddPost(generic.CreateView):
@@ -43,9 +50,16 @@ def CreatePost(request):
 
 
 # View for individual category pages
-def Category(request, categories):
+def CategoryIndividual(request, categories):
     category = Post.objects.filter(category=categories.replace('-', ' '))
     return render(request, 'categories.html', {'categories': categories.title().replace('-', ' '), 'category': category})
+
+
+# View for Categories page
+def CategoryList(request):
+    categories_list = Category.objects.all()
+
+    return render(request, 'category_list.html', {'categories_list': categories_list})
 
 
 class UpdatePost(generic.UpdateView):
