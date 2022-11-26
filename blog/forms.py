@@ -8,13 +8,14 @@ for item in categories:
     categories_list.append(item)
 
 
+# Form for commenting on blog posts
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
 
 
-# new
+# Form for creating new blog posts
 class CreateForm(forms.ModelForm):
     class Meta:
         model = Post

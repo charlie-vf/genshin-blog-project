@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if category %}
+<h1>{{ categories }}</h1>
+<div>
+{% for post in category %}
+    {{ post.title }}
+
+{% if forloop.counter|divisibleby:3 %}
+</div>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+
+</div>
+{% else %}
+<h1>Sorry, this category is either empty or does not exist...</h1>
+{% endif %}
+{%endblock%}

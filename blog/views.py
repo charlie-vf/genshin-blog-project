@@ -42,6 +42,12 @@ def CreatePost(request):
     return render(request, "create_post.html", context)
 
 
+# View for individual category page
+def Category(request, categories):
+    category = Post.objects.filter(category=categories)
+    return render(request, 'categories.html', {'categories': categories.title(), 'category': category})
+
+
 class UpdatePost(generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
