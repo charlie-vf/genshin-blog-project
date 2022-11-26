@@ -19,7 +19,7 @@ class PostList(generic.ListView):
 #     fields = '__all__'
 
 
-#new to replace AddPost
+# new to replace AddPost
 def CreatePost(request):
     model = Post
     create_form = CreateForm(request.POST or None, request.FILES or None)
@@ -31,7 +31,6 @@ def CreatePost(request):
     if request.method == "POST":
         create_form = CreateForm(request.POST, request.FILES)
         if create_form.is_valid():
-            print('this form was valid')
             create_form.instance.author = request.user
             create_form.instance.status = 1
             blog_post = create_form.save(commit=False)
@@ -46,14 +45,7 @@ def CreatePost(request):
 class UpdatePost(generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
-    fields = [
-        'title',
-        'slug',
-        'content',
-        'excerpt',
-        'featured_image',
-        'category'
-    ]
+    form_class = CreateForm
 
 
 class DeletePost(generic.DeleteView):
