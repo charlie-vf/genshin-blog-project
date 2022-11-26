@@ -1,17 +1,40 @@
 {% extends "base.html" %}
 {% block title %}Create a new post!{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <h1>Create a Blog Post!</h1>
 <br><br>
 {% if user.is_authenticated %}
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-secondary">
-            Post
-        </button>
+<div class="container-fluid">
+    <div>
+        <h2 class="create-heading2">Create your recipe here</h2>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col">
+                    {% csrf_token %}
+                    <div class="row">
+                        {{ create_form.title | as_crispy_field | safe }}
+                    </div>
+                    <div class="row">
+                        {{ create_form.category | as_crispy_field | safe }}
+                    </div>
+                    <div class="row">
+                        {{ create_form.content | as_crispy_field | safe }}
+                    </div>
+                    <div class="row">
+                        {{ create_form.excerpt | as_crispy_field | safe }}
+                    </div>
+                        {{ create_form.featured_image | as_crispy_field | safe }}
+                        <p>A placeholder image will be provided if one is not selected.</p>
+                    </div>
+                    <button type="submit" class="btn btn-signup btn-lg submit-btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 {% else %}
 <div>

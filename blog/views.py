@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, CreateForm
 from django.urls import reverse_lazy
 
 
@@ -13,10 +13,34 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-class AddPost(generic.CreateView):
+# class AddPost(generic.CreateView):
+#     model = Post
+#     template_name = 'create_post.html'
+#     fields = '__all__'
+
+
+#new to replace AddPost
+def CreatePost(request):
     model = Post
-    template_name = 'create_post.html'
-    fields = '__all__'
+    create_form = CreateForm(request.POST or None, request.FILES or None)
+    context = {
+        'create_form': create_form,
+    }
+    form_class = CreateForm
+
+    if request.method == "POST":
+        create_form = CreateForm(request.POST, request.FILES)
+        if create_form.is_valid():
+            print('this form was valid')
+            create_form.instance.author = request.user
+            create_form.instance.status = 1
+            blog_post = create_form.save(commit=False)
+
+            blog_post.save()
+            return redirect('home')
+    else:
+        create_form = CreateForm()
+    return render(request, "create_post.html", context)
 
 
 class UpdatePost(generic.UpdateView):
