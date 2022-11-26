@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
+
 
 {% load crispy_forms_tags %}
 
@@ -55,6 +58,8 @@
                         {% endwith %}
                     </div>
                 </div>
+                <a href="{% url 'update_post' post.slug %}">Edit Post</a>
+                <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
             </div>
         </div>
     </div>

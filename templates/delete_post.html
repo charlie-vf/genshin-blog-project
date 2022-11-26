@@ -1,22 +1,25 @@
 {% extends "base.html" %}
-{% block title %}Create a new post!{% endblock %}
+{% block title %}Delete post!{% endblock %}
 {% block content %}
 
-<h1>Create a Blog Post!</h1>
+<h1>Delete Post</h1>
 <br><br>
 {% if user.is_authenticated %}
+<h3>Delete: {{ post.title }}</h3>
+<br>
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        <strong>Are you sure you want to delete this post? This action is irreversible!</strong>
+        <br>
         <button type="submit" class="btn btn-secondary">
-            Post
+            Delete Post!
         </button>
 </div>
 {% else %}
 <div>
     <p>Sorry, it doesn't look like you're logged in!</p>
-    <p>Please log in to publish your own posts!</p>
+    <p>Please log in to delete your posts!</p>
 </div>
 {% endif %}
 

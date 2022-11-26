@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %}Create a new post!{% endblock %}
+{% block title %}Edit post!{% endblock %}
 {% block content %}
 
-<h1>Create a Blog Post!</h1>
+<h1>Edit Post</h1>
 <br><br>
 {% if user.is_authenticated %}
 <div class="form-group">
@@ -10,7 +10,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-secondary">
-            Post
+            Update
         </button>
 </div>
 {% else %}
