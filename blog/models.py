@@ -16,7 +16,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='default')
     excerpt = models.TextField(blank=True)
     category = models.CharField(max_length=200, default='general')
-    likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='post_like', blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
