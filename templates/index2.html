@@ -1,0 +1,17 @@
+<h1>Post</h1>
+
+<ul>
+    {% for post in post_list %}
+    <li>
+        {% if "default" in post.featured_image.url %}
+        <img src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg">
+        {% else %}
+        <img src="{{ post.featured_image.url }}">
+        {% endif %}
+        <p>{{ post.author }}</p>
+        <a href="{% url 'post_detail' post.slug %}">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+        </a>
+    </li>
+</ul>

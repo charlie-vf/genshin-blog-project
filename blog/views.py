@@ -12,6 +12,12 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
+class AddPost(generic.CreateView):
+    model = Post
+    template_name = 'create_post.html'
+    fields = '__all__'
+
+
 class PostDetail(View):
 
     # class method to get post details from server
