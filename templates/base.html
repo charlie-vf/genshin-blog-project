@@ -51,11 +51,6 @@
                             {% for item in category_menu %}
                             <a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a>
                             {% endfor %}
-
-
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     {% else %}

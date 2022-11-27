@@ -2,10 +2,31 @@
 
 {% block content %}
 {% if category %}
-<h1>{{ categories }}</h1>
-<div>
+<h1 class="page-header">{{ categories }}</h1>
+
+<div class="container-fluid">
 {% for post in category %}
-    {{ post.title }}
+
+<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+    <div class="card mb-8">
+        <div class="post-banner">
+            <div class="image-container">
+                {% if "default" in post.featured_image.url %}
+                <img class="card-img-top"
+                    src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg">
+                {% else %}
+                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                {% endif %}
+            </div>
+            <div>
+                <h2 class="category-post-header text-center text-uppercase">
+                    <a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
 
 {% if forloop.counter|divisibleby:3 %}
 </div>

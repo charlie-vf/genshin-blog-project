@@ -412,10 +412,12 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 .page-header {
     color: rgb(142, 51, 240, 0.5);
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size: 2.5rem;
     line-height: 2.5rem;
     letter-spacing: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .card-title {
@@ -424,4 +426,13 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 img {
     border-radius: 1%;
+}
+
+.category-post-header {
+    color: rgba(85, 13, 161, 0.5);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.5rem;
 }

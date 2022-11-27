@@ -2,9 +2,9 @@
 {% block title %}Edit post!{% endblock %}
 {% block content %}
 
-<h1>Edit Post</h1>
+<h1 class="page-header">Edit Post</h1>
 <br><br>
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.id == post.author.id %}
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
@@ -14,9 +14,10 @@
         </button>
 </div>
 {% else %}
-<div>
+<div class="form-group text-center">
     <p>Sorry, it doesn't look like you're logged in!</p>
     <p>Please log in to edit posts!</p>
+    <p>If this is not your post, you cannot edit it...</p>
 </div>
 {% endif %}
 
