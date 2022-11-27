@@ -3,13 +3,11 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h1>Create a Blog Post!</h1>
+<h1 class="page-header text-center text-uppercase">Create a Blog Post!</h1>
 <br><br>
 {% if user.is_authenticated %}
 <div class="container-fluid">
-    <div>
-        <h2 class="create-heading2">Create your recipe here</h2>
-    </div>
+
     <div>
         <form method="post" enctype="multipart/form-data">
             <div class="row">

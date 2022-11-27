@@ -5,35 +5,35 @@
 
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container">
+<div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+    <div class="container-fluid">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-6 masthead-post-text">
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }} 
                     | <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a></p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="image-container">
                 {% if "default" in post.featured_image.url %}
-                <img src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg" width="100%">
+                <img class="masthead-post-image" src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img class="masthead-post-image" src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col-md-6 card mb-4 mt-3 left top">
             <div class="card-body">
                 <p class="card-text ">
                     {{ post.content | linebreaks }}
                 </p>
                 <div class="row">
 
-                    <div class="col-1">
+                    <div class="col-md-3">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -52,20 +52,20 @@
                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
-                    <div class="col-1">
+                    <div class="col-md-3">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
                 </div>
-                <a href="{% url 'update_post' post.slug %}">Edit Post</a>
-                <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
+            <a href="{% url 'update_post' post.slug %}">Edit Post</a>
+            <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
             <hr>
         </div>
     </div>
