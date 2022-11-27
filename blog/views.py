@@ -20,13 +20,6 @@ class PostList(generic.ListView):
         return context
 
 
-# class AddPost(generic.CreateView):
-#     model = Post
-#     template_name = 'create_post.html'
-#     fields = '__all__'
-
-
-# new to replace AddPost
 def CreatePost(request):
     model = Post
     create_form = CreateForm(request.POST or None, request.FILES or None)

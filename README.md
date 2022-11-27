@@ -1,6 +1,8 @@
 # Genshin Community Blog
 
-* In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
+*In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
+<p>
+Due to unforeseen circumstances, time spent on this project was limited to one week. As such, there are a few CSS styling issues left unresolved. They do not impact the functionality of the site, however I am eager to fix them once I have completed this course to maximize the visual aspects of this site.
 
 # Table of Contents
 - [Introduction](#introduction)
@@ -270,6 +272,7 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Summernote - used on post creation forms for content styling
 - Crispy Forms - used on create and edit forms
 - Cloudinary - image storage
+- ElephantSQL - database URL
 - Google Fonts - provided the Roboto and Lato fonts
 - Color Mind - generated color palettes
 - Font Awesome - icons for likes and comments
@@ -366,3 +369,14 @@ Steps taken:
 - Create Procfile
     - web: gunicon project-name.wsgi
 
+#### Deployment
+- Navigate to Deploy
+- Link GitHub account and select relevant repository
+- Click Manual Deploy, then enable Automatic Deployments
+
+## **Credits**
+
+- All images uploaded to the site were found on Google.
+- [Grayscale](https://startbootstrap.com/theme/grayscale) Bootstrap template
+- Helpful [videos](https://www.youtube.com/@Codemycom) for creating categories views
+- [Summernote](https://github.com/summernote/django-summernote) help
