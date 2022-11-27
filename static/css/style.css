@@ -43,6 +43,11 @@ body {
     justify-content: center;
 }
 
+.post-detail .container-fluid {
+    width: 80%;
+    justify-content: center;
+}
+
 .image-flash {
     position: absolute;
     bottom: 5%;
@@ -57,6 +62,15 @@ body {
     text-transform: uppercase;
 }
 
+.categories-list {
+    display: block;
+    text-align: center;
+}
+
+.categories-list h4 {
+    margin-top: 15px;
+}
+
 .masthead-post {
     margin-top: 15px;
     overflow: hidden;
@@ -66,9 +80,10 @@ body {
 }
 
 .masthead-post-text {
-    background-color: #445261;
+    background-color: rgb(80, 129, 126, 0.5);
     color: white;
     position: relative;
+    height: 50%;
 }
 
 .masthead-post-image {
@@ -107,7 +122,7 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: #ffffff;
 }
 
 .btn-signup {
@@ -163,7 +178,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 /* Contact Section Styling */
 
 .contact-section {
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 
 .contact-section .card {

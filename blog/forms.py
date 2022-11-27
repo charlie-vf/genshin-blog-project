@@ -1,3 +1,4 @@
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from .models import Comment, Post, Category
 from django import forms
 
@@ -30,32 +31,9 @@ class CreateForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'category': forms.Select(choices=categories_list, attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': SummernoteWidget(attrs={'class': 'form-control'}),
             'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):
         super(CreateForm, self).__init__(*args, **kwargs)
-
-
-# new
-# class EditForm(forms.ModelForm):
-#     class Meta:
-#         model = Post
-#         fields = (
-#             'title',
-#             'category',
-#             'content',
-#             'excerpt',
-#             'featured_image',
-#         )
-
-#         widgets = {
-#             'title': forms.TextInput(attrs={'class': 'form-control'}),
-#             'category': forms.TextInput(attrs={'class': 'form-control'}),
-#             'content': forms.Textarea(attrs={'class': 'form-control'}),
-#             'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
-#         }
-
-#     def __init__(self, *args, **kwargs):
-#         super(CreateForm, self).__init__(*args, **kwargs)

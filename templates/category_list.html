@@ -3,8 +3,11 @@
 {% block content %}
 
 <h1 class="page-header">Blog Categories</h1>
+<div class="categories-list">
 {% for item in categories_list %}
     <h4><a href="{% url 'category' item|slugify %}">{{ item }}</a></h4>
 {% endfor %}
+<br>
+</div>
 
 {% endblock content %}

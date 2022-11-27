@@ -247,11 +247,14 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Personal profile for Users where they can view their posts and likes
 - Search bar to narrow post display further than categories allows
 - Draft creation. Currently only available in Admin
+- Add images to Categories page as the current list is plain - time constraints negated ability to work more on this page
 
 ## **Issues/Bugs**
 
 - Category: general not displaying when adding links to posts from within the individual category page.
     - This was fixed by changing the name of the category to 'general stuff'
+- SummerNote not loading in on website
+    - This was fixed by following the directions [here](https://github.com/summernote/django-summernote) and adding '|safe' when loading in to the post_detail template.
 
 
 ## **Technologies Used**
@@ -266,8 +269,11 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Bootstrap - site responsiveness and extra design features
 - Summernote - used on post creation forms for content styling
 - Crispy Forms - used on create and edit forms
+- Cloudinary - image storage
 - Google Fonts - provided the Roboto and Lato fonts
+- Color Mind - generated color palettes
 - Font Awesome - icons for likes and comments
+- StartBootstrap - provided Grayscale template which I took various styling code from
 - Git - version control using GitPod terminal to commit and push to GitHub
 - GitHub - store for website's code and content
 - Heroku - hosting platform
@@ -317,6 +323,7 @@ Follows the same formatting as the Login page & allows Users to logout.
 
 - Used all links in navigation bar on all pages
 - Pages are responsive from large to small screens
+- Social media links in footer work and open in new tabs
 
 ## **Code Validation**
 
