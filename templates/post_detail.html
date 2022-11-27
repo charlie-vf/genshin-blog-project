@@ -15,9 +15,9 @@
             </div>
             <div class="image-container">
                 {% if "default" in post.featured_image.url %}
-                <img class="masthead-post-image" src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg" width="100%">
+                <img class="masthead-post-image" src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg" alt="default-image" width="100%">
                 {% else %}
-                <img class="masthead-post-image" src=" {{ post.featured_image.url }}" width="100%">
+                <img class="masthead-post-image" src=" {{ post.featured_image.url }}" alt="user-uploaded-image" width="100%">
                 {% endif %}
             </div>
         </div>

@@ -265,3 +265,49 @@ Admin Stories
     - Approving a comment publishes it underneath the corresponding post
 
 
+Other Manual Testing
+
+- Used all links in navigation bar on all pages
+- Pages are responsive from large to small screens
+
+Code Validation
+
+- HTML5 - Passed W3C Markup Validator (did raise issues with use of {}, but none with actual HTML content)
+- CSS - Passed W3C Markup Validator with no issues
+- Python - Files tested with ExtendsClass - Returned no serious issues
+
+
+Deployment
+
+This project was created using a GitPod workspace, commited to Git, pushed to GitHub and deployed on Heroku.
+
+Heroku Deployment
+
+Steps taken:
+
+Initial:
+- Click New App
+- Choose name and region
+
+Environment Set-Up:
+- Navigate to Settings > Reveal Config Vars
+- Add the following:
+    - DATABASE_URL - generated using ElephantSql
+    - CLOUDINARY_URL - generated from Cloudinary API
+    - SECRET_KEY - generated using command in terminal and hidden inside env.py file
+- To settings.py in project workspace, add the following:
+    - ALLOWED_HOSTS - heroku app name + localhost
+    - TEMPLATES_DIR - join templates folder
+    - allauth, cloudinary, summernote & crispy_forms to Installed Apps
+    - SITE_ID
+    - update TEMPLATES with created TEMPLATES_DIR
+    - get DATABASE_URL from env.py and update DATABASES
+    - STATIC_URL
+    - STATICFILES_STORAGE
+    - STATICFILES_DIRS
+    - STATIC_ROOT
+    - MEDIA_URL
+    - DEFAULT_FILE_STORAGE
+- Create Procfile
+    - web: gunicon project-name.wsgi
+

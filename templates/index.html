@@ -19,15 +19,15 @@
                             <div class="img-fluid">
                                 {% if "default" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg">
+                                    src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/genshin-impact-sumer-review-3.jpg" alt="default-image">
                                 {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="user-uploaded-image">
                                 {% endif %}
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                     <h2 class="card-title text-center text-uppercase">{{ post.title }}</h2>
                                     <p class="card-text text-center">{{ post.excerpt }}</p>
                                 </a>
-                                <hr />
+                                <hr>
                                 <p class="card-text text-muted h6">{{ post.created_on}} <i
                                         class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                                 <p class="card-text text-muted h6">Author: {{ post.author }}
