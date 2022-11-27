@@ -97,14 +97,171 @@ Users can upload their own images when publishing to the site; otherwise, a defa
 
 Features
 
-Design
-
 Nav Bar
 
 The navigation bar features an oft-memed quote from the game ('Te Nnadayo'), links Home, Create a Post, Categories dropdown and Register/Login/Logout, as well as the site's name on the far right.
 On smaller screens, the navigation bar condenses into a full dropdown menu.
+The navigation menu features on all webpages, and the Login link alters depending on the User's login status.
+The Categories dropdown becomes a link to a full categories page when the User is not on the homepage.
 
 Header
 
 The header features the site's name and a small extract summarising the purpose of the site. It is backed by a themed image taken from the most recent expansion in-game.
+This features on every page.
+
+Contact
+
+The contact page contains the contact details for my previous fictional gaming club site, Gay Street Games.
+This features on every page.
+
+Footer
+
+The footer is simple, with a short text on the creator and links to social network homepages.
+This features on every page.
+
+Site Pagination
+
+When a page has more than six posts, a button is added above the contact section to allow Users to navigate through the pages.
+
+Home Page
+
+The homepage features the full directory of all posts on the blog.
+
+Posts
+
+Posts on Homepage
+
+- Image
+- Title & Extract - clickable link to full post content
+- Date and time of creation
+- Number of likes displayed as a heart icon with a number
+- Author name
+- Category
+
+Post in Individual Posts page
+
+- Title
+- Author
+- Date & time of creation
+- Category
+- Image
+- Content
+- Likes and Comments, displayed as icons with numbers. Like icon will be filled in if the User has liked the post
+- Edit & Delete buttons
+- Comments
+- Comment form
+
+Post in Category page
+
+- Image
+- Title - clickable link to full post content
+
+Categories Page
+
+The categories page displays a list of all the currently created categories by the Site Admin. If more are added, this will dynamically update.
+If a category is empty, a message will display informing the User of this.
+
+Create Post Page
+
+Contains a form for Users to create their posts with. 
+Required Fields:
+    - Title
+    - Category (dropdown)
+    - Content
+    - Image (will be the default image if one is not uploaded)
+Optional Field:
+    - Excerpt
+Other:
+    - Submit button
+
+Edit & Delete Pages
+
+These contain the same form as the Create Post page, with the button updated accordingly.
+
+Notification Pop-Up
+
+Upon logging in/out, the User will be displayed with a pop-up message informing them of the action which will auto-dismiss after three seconds.
+
+Login Page
+
+Allows the User to login with their credentials. If they have not yet created an account, there is a link to sign-up.
+The sign-up page requires a username and repeated password, while email is optional.
+
+Logout Page
+
+Follows the same formatting as the Login page & allows Users to logout.
+
+
+Future Features
+
+- Sign-up with social media
+- Require email on sign-up with ability for User to toggle whether they wish to receive updates on the blog
+- Personal profile for Users where they can view their posts and likes
+- Search bar to narrow post display further than categories allows
+- Draft creation. Currently only available in Admin
+
+Issues/Bugs
+
+- Category: general not displaying when adding links to posts from within the individual category page.
+    - This was fixed by changing the name of the category to 'general stuff'
+
+
+Technologies Used
+
+- HTML5
+- CSS3
+- Python - Django functionality inc. models, views, urls
+
+Other:
+
+- Django - used to build models, views and app urls
+- Bootstrap - site responsiveness and extra design features
+- Summernote - used on post creation forms for content styling
+- Crispy Forms - used on create and edit forms
+- Google Fonts - provided the Roboto and Lato fonts
+- Font Awesome - icons for likes and comments
+- Git - version control using GitPod terminal to commit and push to GitHub
+- GitHub - store for website's code and content
+- Heroku - hosting platform
+
+
+Testing
+
+User Stories
+
+- As a Site User I can browse a paginated list of posts so that I can see all posts on the blog.
+    - Created additional posts in each category to ensure pagination works throughout
+
+- As a Site User I can browse individual categories so that I can find posts related to my topic of interest.
+    - Navigated to categories from individual posts, categories dropdown and categories list page 
+
+- As a Site User I can register an account so that I can create posts and interact with other posts.
+    - Created two accounts to validate registration, login & logout
+
+- As a Site User I can edit and delete my own posts.
+    - Edit & Delete buttons available underneath posts
+    - Checked editing/deleting only allowed if I was logged into the corresponding account for a post
+
+- As a Site User I can click on posts so that view the full content and the comment discussion.
+    - Title & excerpt are clickable links to full post content page
+    - Clicking on a post brings User to full post content page
+
+- As a Site User I can comment on posts so that I can talk to others & share my experiences with the game.
+    - Comment form available under each post
+    - Commented on posts from each account
+
+- As a Site User I can like/unlike posts so that I can interact with other content.
+    - Like icon available under each post
+    - Liked and unliked posts from each account
+
+Admin Stories
+
+- As a Site Admin I can view posts in an editor so that I can manage the blog's content effectively.
+    - Can view a full list of posts in Django Admin
+    - Can edit posts, including slug, author, likes and status, which are not available to regular site Users
+
+- As a Site Admin I can view & approve comments before they are posted so that I can moderate content on the site.
+    - Comments are passed to approval system before they are published
+    - Approving a comment publishes it underneath the corresponding post
+
 
