@@ -116,6 +116,8 @@ Time constraints limited the amount of features from the original plan I was abl
 
 All pages follow the same basic setup, with the Wireframe created using Figma.
 
+![Skeleton](media-readme/genshin-homepage.png)
+
 ## **Design**
 
 Various styling elements were taken from the free Bootstrap template Greyscale (link in credits section)
@@ -124,6 +126,9 @@ Various styling elements were taken from the free Bootstrap template Greyscale (
 
 My theme with the webpages I have created thusfar is purples, blues and black. For this site, as Genshin Impact is an incredibly bright game, visually, I chose to scrap the black and stick to purples, blues, white and light-grey.
 As this site is heavily image-based, a white background best displays the images, and aids in accessibility when using purples.
+
+![Purples/Blues](media-readme/genshin-purples.png)
+![Greys](media-readme/genshin-greys.png)
 
 ### **Header**
 
