@@ -62,13 +62,15 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <a href="{% url 'update_post' post.slug %}">Edit Post</a>
-            <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
-            <hr>
+    {% if request.user == post.author %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'update_post' post.slug %}">Edit Post</a>
+                <a href="{% url 'delete_post' post.slug %}">Delete Post</a>
+                <hr>
+            </div>
         </div>
-    </div>
+    {% endif %}
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>

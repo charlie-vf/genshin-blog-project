@@ -4,6 +4,8 @@
 <p>
 Due to unforeseen circumstances, time spent on this project was limited to one week. As such, there are a few CSS styling issues left unresolved. They do not impact the functionality of the site, however I am eager to fix them once I have completed this course to maximize the visual aspects of this site.
 
+- Encountered an issue where adding Issues to a Project in the repo caused issues with the workspace and led to restarting. As such, the kanban board can be found in a previous repository, [here](https://github.com/users/charlie-vf/projects/6/views/1). I have also added the User Stories into this ReadMe.
+
 # Table of Contents
 - [Introduction](#introduction)
 - [UX](#ux)
@@ -327,6 +329,7 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Used all links in navigation bar on all pages
 - Pages are responsive from large to small screens
 - Social media links in footer work and open in new tabs
+- Attempted to edit/delete posts when not logged in
 
 ## **Code Validation**
 

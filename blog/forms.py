@@ -9,15 +9,15 @@ for item in categories:
     categories_list.append(item)
 
 
-# Form for commenting on blog posts
 class CommentForm(forms.ModelForm):
+    """ Form for commenting on posts """
     class Meta:
         model = Comment
         fields = ('body',)
 
 
-# Form for creating new blog posts
 class CreateForm(forms.ModelForm):
+    """ Form for creating new blog post """
     class Meta:
         model = Post
         fields = (
@@ -30,7 +30,8 @@ class CreateForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'category': forms.Select(choices=categories_list, attrs={'class': 'form-control'}),
+            'category': forms.Select(
+                choices=categories_list, attrs={'class': 'form-control'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
             'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
         }

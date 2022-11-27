@@ -8,6 +8,7 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
 class Post(models.Model):
+    """ Model for Posts """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(null=False, max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
@@ -38,12 +39,13 @@ class Post(models.Model):
         return super().save(*args, **kwargs)
 
 
-# Categories for posts
 class Category(models.Model):
+    """ Model for Categorization """
+    name = models.CharField(max_length=250)
+
     class Meta:
         verbose_name_plural = "categories"
-
-    name = models.CharField(max_length=250)
+        ordering = ['name']
 
     def __str__(self):
         return self.name
@@ -52,9 +54,10 @@ class Category(models.Model):
         return reverse('home')
 
 
-# Auto-generated admin categories for comments
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    """ Model for admin categories for comments """
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=90)
     body = models.TextField()
     email = models.EmailField()

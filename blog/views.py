@@ -7,13 +7,14 @@ from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
+    """ View for list of posts on index page """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
 
-    # for category dropdown list
     def get_context_data(self, *args, **kwargs):
+        """ Category dropdown list """
         category_menu = Category.objects.all()
         context = super(PostList, self).get_context_data(*args, **kwargs)
         context["category_menu"] = category_menu
@@ -21,6 +22,7 @@ class PostList(generic.ListView):
 
 
 def CreatePost(request):
+    """ Creating new posts """
     model = Post
     create_form = CreateForm(request.POST or None, request.FILES or None)
     context = {
@@ -42,34 +44,48 @@ def CreatePost(request):
     return render(request, "create_post.html", context)
 
 
-# View for individual category pages
 def CategoryIndividual(request, categories):
+    """ Individual category pages """
     category = Post.objects.filter(category=categories.replace('-', ' '))
-    return render(request, 'categories.html', {'categories': categories.title().replace('-', ' '), 'category': category})
+    return render(
+        request,
+        'categories.html',
+        {
+            'categories': categories.title().replace('-', ' '),
+            'category': category
+        }
+    )
 
 
-# View for Categories page
 def CategoryList(request):
+    """ All categories page """
     categories_list = Category.objects.all()
 
-    return render(request, 'category_list.html', {'categories_list': categories_list})
+    return render(request,
+        'category_list.html',
+        {
+            'categories_list': categories_list
+        }
+    )
 
 
 class UpdatePost(generic.UpdateView):
+    """ View to update a post """
     model = Post
     template_name = 'update_post.html'
     form_class = CreateForm
 
 
 class DeletePost(generic.DeleteView):
+    """ View to delete a post """
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
 
 
 class PostDetail(View):
+    """ View to display full post details """
 
-    # class method to get post details from server
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -90,8 +106,8 @@ class PostDetail(View):
             },
         )
 
-    # class method to allow users to comment
     def post(self, request, slug, *args, **kwargs):
+        # Allow users to comment on posts
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
@@ -125,6 +141,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """ Allow users to like posts """
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
