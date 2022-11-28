@@ -2,6 +2,8 @@
 
 ![Mockup](media-readme/all-devices-white.png)
 
+[Deployed Site](https://genshin-blog-project.herokuapp.com/)
+
 *In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
 <p>
 Due to unforeseen circumstances, time spent on this project was limited to one week. As such, there are a few CSS styling issues left unresolved. They do not impact the functionality of the site, however I am eager to fix them once I have completed this course to maximize the visual aspects of this site.
