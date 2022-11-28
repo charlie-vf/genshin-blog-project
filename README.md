@@ -115,10 +115,11 @@ Time constraints limited the amount of features from the original plan I was abl
 
 - Allow Users to update their password
 - Allow Users to create accounts with social media
+- Allow Users to view only their own posts
 
 ## **Skeleton**
 
-All pages follow the same basic setup, with the Wireframe created using Figma.
+All pages follow the same basic setup, with the central section changing according to the page's contents. The Wireframe created using Figma.
 
 ![Skeleton](media-readme/genshin-homepage.png)
 
@@ -128,7 +129,7 @@ Various styling elements were taken from the free Bootstrap template Greyscale (
 
 ### **Colors**
 
-My theme with the webpages I have created thusfar is purples, blues and black. For this site, as Genshin Impact is an incredibly bright game, visually, I chose to scrap the black and stick to purples, blues, white and light-grey.
+My theme with the webpages I have created thusfar is purples, blues and black. For this site, as Genshin Impact is an incredibly bright game, I chose to scrap the black and stick to purples, blues, white and light-grey.
 As this site is heavily image-based, a white background best displays the images, and aids in accessibility when using purples.
 
 ![Purples/Blues](media-readme/genshin-purples.png)
@@ -151,7 +152,7 @@ Users can upload their own images when publishing to the site; otherwise, a defa
 
 ### **Nav Bar**
 
-The navigation bar features an oft-memed quote from the game ('Te Nnadayo'), links Home, Create a Post, Categories dropdown and Register/Login/Logout, as well as the site's name on the far right.
+The navigation bar features an oft-memed quote from the game ('Te Nnadayo'), links to Home, Create a Post, Categories dropdown and Register/Login/Logout, as well as the site's name on the far right.
 On smaller screens, the navigation bar condenses into a full dropdown menu.
 The navigation menu features on all webpages, and the Login link alters depending on the User's login status.
 The Categories dropdown becomes a link to a full categories page when the User is not on the homepage.
@@ -190,7 +191,7 @@ The homepage features the full directory of all posts on the blog.
 - Author name
 - Category
 
-### Post in Individual Posts page
+### Post on Individual Posts page
 
 - Title
 - Author
@@ -203,7 +204,7 @@ The homepage features the full directory of all posts on the blog.
 - Comments
 - Comment form
 
-### Post in Category page
+### Post on Category page
 
 - Image
 - Title - clickable link to full post content
@@ -216,14 +217,14 @@ If a category is empty, a message will display informing the User of this.
 ### **Create Post Page**
 
 Contains a form for Users to create their posts with. 
-Required Fields:
+- Required Fields:
     - Title
     - Category (dropdown)
     - Content
     - Image (will be the default image if one is not uploaded)
-Optional Field:
+- Optional Field:
     - Excerpt
-Other:
+- Other:
     - Submit button
 
 ### **Edit & Delete Pages**
@@ -273,12 +274,14 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Bootstrap - site responsiveness and extra design features
 - Summernote - used on post creation forms for content styling
 - Crispy Forms - used on create and edit forms
-- Cloudinary - image storage
+- Cloudinary - cloud-based storage
 - ElephantSQL - database URL
 - Google Fonts - provided the Roboto and Lato fonts
 - Color Mind - generated color palettes
 - Font Awesome - icons for likes and comments
+- Figma - generated wireframe
 - StartBootstrap - provided Grayscale template which I took various styling code from
+- GitPod - development workspace
 - Git - version control using GitPod terminal to commit and push to GitHub
 - GitHub - store for website's code and content
 - Heroku - hosting platform
@@ -329,7 +332,7 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Used all links in navigation bar on all pages
 - Pages are responsive from large to small screens
 - Social media links in footer work and open in new tabs
-- Attempted to edit/delete posts when not logged in
+- Attempted to edit/delete posts when not logged in - not allowed
 
 ## **Code Validation**
 
