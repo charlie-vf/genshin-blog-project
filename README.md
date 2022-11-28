@@ -1,5 +1,7 @@
 # Genshin Community Blog
 
+![Mockup](media-readme/all-devices-white.png)
+
 *In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
 <p>
 Due to unforeseen circumstances, time spent on this project was limited to one week. As such, there are a few CSS styling issues left unresolved. They do not impact the functionality of the site, however I am eager to fix them once I have completed this course to maximize the visual aspects of this site.
@@ -15,6 +17,7 @@ Due to unforeseen circumstances, time spent on this project was limited to one w
 - [Strategy](#strategy)
 - [Target Audiences](#target-audiences)
 - [The Website Should...](#the-website-should-allow-users-to)
+- [Epics](#epics)
 - [Scope](#scope)
 - [Skeleton](#skeleton)
 - [Design](#design)
@@ -44,6 +47,8 @@ Due to unforeseen circumstances, time spent on this project was limited to one w
     - [Other Testing](#other-manual-testing)
 - [Code Validation](#code-validation)
 - [Deployment](#deployment)
+- [Cloning](#cloning)
+- [Credits](#credits)
 
 
 
@@ -69,6 +74,7 @@ Users can create, edit & delete their own posts, and interact with others' posts
 
 - As a Site Admin I can view posts in an editor so that I can manage the blog's content effectively.
 - As a Site Admin I can view & approve comments before they are posted so that I can moderate content on the site.
+- As a Site Admin, I can deploy the site to a hosting platform and document its development
 
 ## **Development**
 
@@ -96,6 +102,31 @@ Whilst the main goal is sharing content, it could also be used as a means for pl
 - Manage comments on posts
 - Override user authentication to delete posts which violate the idea of a healthy community
 
+## **Epics**
+
+The following bulletpoints allowed me to prioritise epics for sprints and ensure the most important content made its way onto the deployed site.
+
+### Epic One - Basic Setup
+
+- This was crucial to allow development of the future epics and related stories as it provided the base for all pages
+
+### Epic Two - Authentication
+
+- User authentication is crucial for this blog.
+- Relates to Admin stories and User registration & in-site authentication restrictions
+
+### Epic Three - Blog Posts
+
+- Relates to creating, editing & deleting posts; browsing posts; interacting with posts
+
+### Epic Four - Searchable
+
+- Relates to categorization features
+
+### Epic Five - Deployment & Documentation
+
+- Relates to deploying to Heroku and documenting development in the ReadMe
+
 ## **Scope**
 
 Time constraints limited the amount of features from the original plan I was able to implement, however priority scoring ensured the most important features made their way into the finished site.
@@ -105,6 +136,7 @@ Time constraints limited the amount of features from the original plan I was abl
 - Allow Users to create an account
 - Allow Users to create posts
 - Allow Users to browse all posts, or by category
+- Be responsive across all device sizes
 
 ### The UX should:
 
@@ -115,7 +147,6 @@ Time constraints limited the amount of features from the original plan I was abl
 
 - Allow Users to update their password
 - Allow Users to create accounts with social media
-- Allow Users to view only their own posts
 
 ## **Skeleton**
 
@@ -280,6 +311,7 @@ Follows the same formatting as the Login page & allows Users to logout.
 - Color Mind - generated color palettes
 - Font Awesome - icons for likes and comments
 - Figma - generated wireframe
+- Website Mockup Generator - generated mockup of site responsiveness
 - StartBootstrap - provided Grayscale template which I took various styling code from
 - GitPod - development workspace
 - Git - version control using GitPod terminal to commit and push to GitHub
@@ -350,10 +382,12 @@ This project was created using a GitPod workspace, commited to Git, pushed to Gi
 Steps taken:
 
 #### Initial:
+
 - Click New App
 - Choose name and region
 
 #### Environment Set-Up:
+
 - Navigate to Settings > Reveal Config Vars
 - Add the following:
     - DATABASE_URL - generated using ElephantSql
@@ -374,15 +408,30 @@ Steps taken:
     - DEFAULT_FILE_STORAGE
 - Create Procfile
     - web: gunicon project-name.wsgi
+- Imports
+    - Import relevant content, e.g. django, crispy-forms, summernote etc.
 
 #### Deployment
+
 - Navigate to Deploy
 - Link GitHub account and select relevant repository
 - Click Manual Deploy, then enable Automatic Deployments
 
+## **Forking/Cloning**
+
+To clone this repo and run it locally on your device:
+
+- Either fork directly from the repository, or:
+    - Copy the following text: git clone https://github.com/charlie-vf/genshin-blog-project.git
+    - In your terminal, change to the local directory you want to clone to
+    - Paste the copied text and hit enter
+
 ## **Credits**
 
 - All images uploaded to the site were found on Google.
-- [Grayscale](https://startbootstrap.com/theme/grayscale) Bootstrap template
-- Helpful [videos](https://www.youtube.com/@Codemycom) for creating categories views
+- [Grayscale](https://startbootstrap.com/theme/grayscale) free Bootstrap template
+- Some CSS styling taken from I Think Therefore I Blog walkthrough
+    - Without time constraints, this would have been edited out & replaced with own styling
+- Helpful [videos](https://www.youtube.com/@Codemycom) for troubleshooting categories creation
 - [Summernote](https://github.com/summernote/django-summernote) help
+- The other students in Slack and my amazing mentor
