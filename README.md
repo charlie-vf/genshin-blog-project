@@ -6,9 +6,8 @@
 
 *In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
 <p>
-Due to unforeseen circumstances, time spent on this project was limited to one week. As such, there are a few CSS styling issues left unresolved. They do not impact the functionality of the site, however I am eager to fix them once I have completed this course to maximize the visual aspects of this site.
+Due to unforeseen circumstances, time spent on this project was limited greatly. As such, there are a few CSS styling issues left unresolved. They do not impact the functionality of the site, however I am eager to fix them once I have completed this course to maximize the visual aspects of this site.
 
-- Encountered an issue where adding Issues to a Project in the repo caused issues with the workspace and led to restarting. As such, the kanban board can be found in a previous repository, [here](https://github.com/users/charlie-vf/projects/6/views/1). I have also added the User Stories into this ReadMe.
 
 # Table of Contents
 - [Introduction](#introduction)
@@ -19,7 +18,7 @@ Due to unforeseen circumstances, time spent on this project was limited to one w
 - [Strategy](#strategy)
 - [Target Audiences](#target-audiences)
 - [The Website Should...](#the-website-should-allow-users-to)
-- [Epics](#epics)
+- [Sprints](#sprints)
 - [Scope](#scope)
 - [Skeleton](#skeleton)
 - [Design](#design)
@@ -104,49 +103,161 @@ Whilst the main goal is sharing content, it could also be used as a means for pl
 - Manage comments on posts
 - Override user authentication to delete posts which violate the idea of a healthy community
 
-## **Epics**
+## **Sprints**
 
-The following bulletpoints allowed me to prioritise epics for sprints and ensure the most important content made its way onto the deployed site.
+<details><summary>Sprint One – Admin – Two Days</summary>
 
-### Epic One - Basic Setup
+The first area to focus on was setting up the admin side. This involved ensuring the authorised admin has full CRUD functionality over the site’s content (posts, comments, likes, categories) so the site can be effectively and safely managed. 
 
-- This was crucial to allow development of the future epics and related stories as it provided the base for all pages
+The admin needs to be able to:
+- See all content on the site
+- Control post and comment visibility
+- See likes on posts
+- Edit and update categories list
 
-### Epic Two - Authentication
+Relevant user stories:
+- As a site admin, I can view all users of the site so that I can control their active status
+    - The site admin can see a full list of all users of the site and click the ‘active’ button to control their status
 
-- User authentication is crucial for this blog.
-- Relates to Admin stories and User registration & in-site authentication restrictions
+- As a site admin, I can view all posts and control them in an editor, including deletion, so I can effectively manage the site’s content
+    - The site admin can navigate to ‘posts’ under the ‘blog’ subsection and view a list of all posts
 
-### Epic Three - Blog Posts
+- Through this, the admin can review their published status, creation date, content, creator and interaction counts
+    - As a site admin, I can view all comments on posts so I can manage user interactions and ensure safe conduct
 
-- Relates to creating, editing & deleting posts; browsing posts; interacting with posts
+- The site admin can navigate to ‘comments’ under the ‘blog’ subsection and view all comments and their associated posts and users
+    - Through this, the admin can monitor user comments to ensure they are acceptable and relevant
 
-### Epic Four - Searchable
+- As a site admin, I can view and edit the categories so I can respond to user feedback and add more as necessary
+    - The site admin can navigate to ‘categories’ under the ‘blog’ subsection and view and edit the available categories list
+    - Through this, the admin can respond to user feedback regarding category relevancy and optimisation
+</details>
 
-- Relates to categorization features
+<details><summary>Sprint Two – General – Two days</summary
 
-### Epic Five - Deployment & Documentation
+The second area focused on the client-side site homepage. By creating posts on the admin site, I was able to create a layout for user posts once account creation was completed at a later stage. 
 
-- Relates to deploying to Heroku and documenting development in the ReadMe
+General needs to:
+- Display a navbar that allows users to easily navigate between the site’s pages (homepage, create a post, categories, register/login/logout)
+- Display a paginated (6) list of posts with next & previous button functionality
+- Display the posts with relevant details (image, title, creation date, creator name, number of likes & category)
+- Have functioning links that direct the user to the posts individual page so they can view the entire content
+- Have a footer which displays contact information to reach the site’s owners
+
+Relevant User stories:
+- As a site user, I can browse a paginated list of posts so I can experience more of the site’s content
+    - Users can scroll through all posts with the most recent first, and navigate to further pages
+    - Through this, users can easily keep up to date with the site’s content as it arrives
+
+- As a site user, I can easily navigate to different areas of the site so I can browse more content
+    - The navbar is simple and displayed across all pages to allow users to navigate to the homepage, create a post, the list of categories & register/login/logout
+
+- As a site user, I can contact the site’s owners so I can give them feedback and ask questions
+    - The footer is present at the bottom of every page, displaying relevant contact information for the user
+</details>
+
+<details><summary>Sprint Three – Authentication – Two days</summary>
+
+The third area was authentication – allowing users to create accounts and displaying their status in the navbar
+
+Requirements for this section:
+- Users should be able to create accounts by following the register button in the navbar
+- Users should be automatically logged in upon account creation
+- The navbar should be responsive and display to the user whether they are logged in
+- Users should be able to logout once logged in
+
+Relevant user stories:
+- As a site user, I can create an account so I can interact further with the community
+    - Through the register link in the navbar, users can create accounts and be automatically logged in so they can begin sharing content and interacting with others’ content
+
+- As a site user, I can see whether I am logged in so I am always aware of my access status
+    - The navbar is responsive and displays register/login/logout dependent on the user’s status
+    - This makes it easy for users to know whether they are able to create, comment or like on posts, and login/create an account if they have not already
+</details>
+
+<details><summary>Sprint Four – Post Creation – Two Days</summary>
+
+Relates to the ‘Create A Post’ page. 
+
+Requirements for this section:
+- Users should be able to create posts
+- Users should be able to upload images to their posts
+- Users should be able to assign categories to their posts
+
+Relevant user stories:
+- As a site user, I can create posts so that I can share content with the community
+    - Logged in users can click on ‘Create A Post’ to begin creating a new post to share
+
+- As a site user, I can assign my posts to categories so they are easier for others to find
+    - Inside ‘Create A Post’, users can assign their post to the most relevant category
+
+- As a site user, I can add images to my posts so I can make them more interesting
+    - Inside ‘Create A Post’, users can click ‘choose file’ to upload an image
+    - If no image is manually provided, there will be a default one
+</details>
+
+<details><summary>Sprint Five – Posts Interactions – Two days</summary>
+
+This section focussed on allowing users to interact with posts through commenting and liking. This improves the user experience of the site by allowing users to give feedback
+
+Requirements for this section:
+- Users can browse posts by category to find relevant content
+- Logged in users should be able to like and unlike posts
+- Logged in users should be able to comment on posts
+
+Relevant user stories:
+- As a site user, I can search for posts by category so I can find what I’m looking for easier
+    - Dropdown and individual category pages available
+
+- As a site user, I can click on a post so I can view more of its content, including comments
+    - Clicking a post navigates the user to the full content page
+
+- As a site user, I can like posts so I can give creators my feedback
+    - Logged in users can click the heart icon to like a post, and again to unlike it
+
+- As a site user, I can comment on posts so I can interact with the community
+    - Logged in users can comment on posts, and then view their comments under the post’s content
+</details>
+
+<details><summary>Sprint Six – Edit & Delete posts – One Day</summary>
+
+This small sprint involved allowing users to edit and delete their posts. Only logged in users who own the post should be permitted access to these functions. 
+
+Requirements for this section:
+- Under a post a logged in user owns, they should be able to click on edit and delete options to complete the relevant actions
+- The edit option should allow users full editing control over all the sections available in the create post page
+- The delete option should fully remove the user’s post from the site, with confirmation to prevent a miss-click
+- Logged out users, or users who do not own the post, should not be permitted access to these buttons or relevant URLs
+
+Relevant user stories:
+- As a site user, I can edit my posts so I can control them after creation
+    - By clicking the edit button, users are navigated to an edit page displaying a full form for them to edit any areas of the post they so wish
+
+- As a site user, I can delete my posts so I can remove them if desired
+    - By clicking the edit button, users are presented with a confirmation message which, if clicked, immediately removes their post from the site
+</details>
 
 ## **Scope**
 
-Time constraints limited the amount of features from the original plan I was able to implement, however priority scoring ensured the most important features made their way into the finished site.
+Priority scoring ensured the most important features made their way into the finished site.
 
 ### The UX must:
 
+- Allow Users to seamlessly navigate throughout the website's features
 - Allow Users to create an account
 - Allow Users to create posts
-- Allow Users to browse all posts, or by category
+- Allow Users to browse all posts
+- Allow Users to comment & like on other posts
 - Be responsive across all device sizes
 
 ### The UX should:
 
 - Allow Users to edit & delete their posts if authorised
-- Allow Users to comment & like on other posts
+- Allow Users to browse posts by category
 
 ### The UX may (future implementation):
 
+- Provide Users with contact information for the site's owners
 - Allow Users to update their password
 - Allow Users to create accounts with social media
 
