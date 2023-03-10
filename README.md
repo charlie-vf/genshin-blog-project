@@ -61,21 +61,23 @@ Users can create, edit & delete their own posts, and interact with others' posts
 
 ## UX
 
-## **User Stories**
+## **User Stories, summarised (see Project)**
 
 - As a Site User I can browse a paginated list of posts so that I can see all posts on the blog.
 - As a Site User I can browse individual categories so that I can find posts related to my topic of interest.
 - As a Site User I can register an account so that I can create posts and like & comment on other posts.
 - As a Site User I can edit and delete my own posts.
-- As a Site User I can click on posts so that view the full content and the comment discussion.
+- As a Site User I can click on posts so that I can view the full content and the comment discussion.
 - As a Site User I can comment on posts so that I can talk to others & share my experiences with the game.
 - As a Site User I can like/unlike posts so that I can interact with other content.
+- As a Site User I can view contact information so I can get in touch with the site's owners.
 
 ## **Admin Stories**
 
 - As a Site Admin I can view posts in an editor so that I can manage the blog's content effectively.
 - As a Site Admin I can view & approve comments before they are posted so that I can moderate content on the site.
-- As a Site Admin, I can deploy the site to a hosting platform and document its development
+- As a Site Admin I can manage the categories list so that I can respond to User feedback.
+- As a Site Admin I can view and manage the list of site users
 
 ## **Development**
 
@@ -100,6 +102,7 @@ Whilst the main goal is sharing content, it could also be used as a means for pl
 
 ## The website should allow the Admin to:
 
+- View all posts
 - Manage comments on posts
 - Override user authentication to delete posts which violate the idea of a healthy community
 
