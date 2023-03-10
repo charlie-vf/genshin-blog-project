@@ -551,3 +551,7 @@ To clone this repo and run it locally on your device:
 - Helpful [videos](https://www.youtube.com/@Codemycom) for troubleshooting categories creation
 - [Summernote](https://github.com/summernote/django-summernote) help
 - The other students in Slack and my amazing mentor
+
+## **Deployment Resubmission Note**
+
+- As no changes were made to the actual code of the site, the Heroku site has not been redeployed following Project & README alterations
